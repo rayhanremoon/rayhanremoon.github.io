@@ -1,4 +1,4 @@
-# rayhanremoon.github.io/your_php_script.php
+# rayhanremoon.github.io/your_php_script.html
 
 <!DOCTYPE html>
 <script>
