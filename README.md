@@ -1,32 +1,35 @@
 # rayhanremoon.github.io
 
 <!DOCTYPE html>
-<script>
-    window.onload = function () {
-        TruecallerSDK.init({
-            clientId: "7dB6bab5f95bd24014da2a373d87bc6f397f0",
-            callbackUrl: "rayhanremoon.github.io/your_php_script.php", // Your PHP script URL
-            redirect: true,
-            mobileOnly: true
-        });
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truecaller Verification</title>
+    <!-- Truecaller SDK Script -->
+    <script
+        type="text/javascript"
+        src="https://sdk.truecaller.com/v2.0/truecaller-sdk.js"
+        async
+    ></script>
+</head>
+<body>
+    <h2>Truecaller Verification</h2>
+    <!-- Button to trigger Truecaller login -->
+    <div id="truecaller-login"></div>
 
-        TruecallerSDK.login(document.getElementById("truecaller-login"), function (response) {
-            // Send the response data to your server
-            fetch('rayhanremoon.github.io/your_php_script.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(response)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data); // Handle server response
+    <script>
+        window.onload = function () {
+            // Truecaller SDK initialization
+            TruecallerSDK.init({
+                clientId: "IiO2U050e07a511c942999a1efd1c6c2f0dc8", // আপনার ক্লায়েন্ট আইডি
+                callbackUrl: "https://rayhanremoon.github.io", // আপনার Callback URL
+                redirect: true,
+                mobileOnly: true
             });
-        });
-    };
-</script>
-TruecallerSDK.login(document.getElementById("truecaller-login"), function (response) {
+
+            // Trigger Truecaller login
+            TruecallerSDK.login(document.getElementById("truecaller-login"), function (response) {
                 // Success response handling
                 console.log(response);  // এখানে আপনি response দেখে ডেটা প্রসেস করতে পারবেন
             });
