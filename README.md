@@ -1,43 +1,39 @@
 # rayhanremoon.github.io
 
-@<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rayhan Remoon</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            margin-top: 100px;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #555;
-            font-size: 18px;
-        }
-        footer {
-            margin-top: 50px;
-            color: #777;
-        }
-    </style>
+    <title>Truecaller Verification</title>
+    <!-- Truecaller SDK Script -->
+    <script
+        type="text/javascript"
+        src="https://sdk.truecaller.com/v2.0/truecaller-sdk.js"
+        async
+    ></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Rayhan Remoon's Website!</h1>
-        <p>Hello! My name is Rayhan Remoon. This is a simple website created for my personal profile.</p>
-    </div>
-    <footer>
-        <p>© 2024 Rayhan Remoon. All rights reserved.</p>
-    </footer>
+    <h2>Truecaller Verification</h2>
+    <!-- Button to trigger Truecaller login -->
+    <div id="truecaller-login"></div>
+
+    <script>
+        window.onload = function () {
+            // Truecaller SDK initialization
+            TruecallerSDK.init({
+                clientId: "7dB6bab5f95bd24014da2a373d87bc6f397f0", // আপনার ক্লায়েন্ট আইডি
+                callbackUrl: "https://verification-sdk-console.truecaller.com/dashboard/apps/sie59548bede9547bdb15613d7d6c66aa0", // আপনার Callback URL
+                redirect: true,
+                mobileOnly: true
+            });
+
+            // Trigger Truecaller login
+            TruecallerSDK.login(document.getElementById("truecaller-login"), function (response) {
+                // Success response handling
+                console.log(response);  // এখানে আপনি response দেখে ডেটা প্রসেস করতে পারবেন
+            });
+        };
+    </script>
 </body>
 </html>
